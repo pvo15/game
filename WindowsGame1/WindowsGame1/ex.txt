@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna;
+
+namespace WindowsGame1
+{
+    class character
+    {
+        Texture2D texture;
+        Vector2 position;
+        Vector2 velocity;
+        Vector2 originpostion;
+        bool hasJumped;
+        bool hasatack;
+        int frames = 0;
+        KeyboardState ks;
+        Rectangle rectangle;
+        int currentFrame;
+        int frameHeight;
+        int frameWidth;
+
+
+        float timer;
+        float interval  = 178;
+
+        public character(Texture2D newtextur, Vector2 newposition,int newframeHeight, int newframeWidth) {
+            texture = newtextur;
+            position = newposition;
+            hasJumped = true;
+            hasatack = false;
+            frameHeight = newframeHeight;
+            frameWidth = newframeWidth;
+            //atacktexture = newatacktexture;
+
+        }
+
+
+        public void Update(GameTime gameTime) {
+            position += velocity;
+            ks = Keyboard.GetState();
+            rectangle = new Rectangle(currentFrame * frameWidth, 0, frameWidth, frameHeight);
+            originpostion = new Vector2(rectangle.Width / 2, rectangle.Height / 2);
+            position = position + velocity;
+
+            if (ks.IsKeyDown(Keys.Right))
+            {
+             
+               velocity.X = .1f * gameTime.ElapsedGameTime.Milliseconds;              
+            }
+            else if (ks.IsKeyDown(Keys.Left))
+            {
+               
+                velocity.X = -(.1f * gameTime.ElapsedGameTime.Milliseconds);
+            }
+            else {
+                velocity = Vector2.Zero;
+            }
+
+            if (ks.IsKeyDown(Keys.Space) && hasJumped == false) {
+                position.Y -=50f;
+                hasJumped = true;
+
+            }
+            if (hasJumped == true) {
+                float i = 1;
+                velocity.Y += 0.15f * i;
+            }
+
+            if (position.Y + rectangle.Height < 480) {
+                velocity.Y += .5f; 
+            } else
+            {
+                hasJumped = false;
+            }
+
+            if (hasJumped == false) {
+                velocity.Y = 0f;
+            }
+
+            // ===================================
+
+           
+
+
+        }
+
+    
+
+        public void Draw(SpriteBatch spriteBatch) {
+            spriteBatch.Draw(texture,rectangle,Color.White);
+
+        }
+
+    }
+}
