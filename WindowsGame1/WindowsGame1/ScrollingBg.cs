@@ -19,19 +19,22 @@ namespace WindowsGame1
     }
     class MainScrolling : ScrollingBg
     {
+        
         public MainScrolling(Texture2D newtexture,Rectangle newRectangle) {
             BgRectangle = newRectangle;
             BgTexure = newtexture;
+            //Character player = new Character(this);
         }
 
         public void update() {
             BgRectangle.X -= 2;
             temp = BgRectangle.X;
          }
-        public void updatestop()
+        public void updaterevers()
         {
-            BgRectangle.X = temp;
+            BgRectangle.X += 2;
         }
+        
 
     }
 }

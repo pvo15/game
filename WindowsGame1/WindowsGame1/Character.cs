@@ -26,12 +26,16 @@ namespace WindowsGame1
 
         bool hasJumped = false;
 
+        MainScrolling bg1,bg2;
+
         // Keyboard ks = Keyboard.GetState;
-        public Character(Texture2D newtexure, Vector2 newPosition, int newframeHeight, int newframewidth) {
+        public Character(Texture2D newtexure, Vector2 newPosition, int newframeHeight, int newframewidth, MainScrolling newbg1, MainScrolling newbg2) {
             textur = newtexure;
             position = newPosition;
             frameHeight = newframeHeight;
             framewidth = newframewidth;
+            bg1 = newbg1;
+            bg2 = newbg2;
         }
         public void Update(GameTime gameTime) {
             rectangle = new Rectangle(currentFrame * frameHeight,0,framewidth,frameHeight);
@@ -40,17 +44,34 @@ namespace WindowsGame1
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
                 right(gameTime);
-                
-                velocity.X = 3; 
+                velocity.X = 3;
+                if (position.X >= 300)
+                {
+
+                    bg1.update();
+                    bg2.update();
+                    position.X = 300;
+                }
+
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
                 left(gameTime);
                 velocity.X = -3;
+                if (position.X <= 50)
+                {
+
+                    bg1.updaterevers();
+                    bg2.updaterevers();
+                    position.X = 50;
+                }
+
+
+
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Up) && hasJumped == false)
             {
-                position.Y -= 100f;
+                position.Y -= 200f;
                 hasJumped = true;
 
             }
@@ -63,13 +84,17 @@ namespace WindowsGame1
             if (hasJumped == true)
             {
                 float i = 1;
-                velocity.Y += 0.15f * i;
+                velocity.Y += 1.15f * i;
             }
 
             if (position.Y + rectangle.Height < 420)
             {
                 velocity.Y += .5f;
             }
+         /*  else if (position.Y + rectangle.Height >= 420)
+            {
+                velocity.Y = 420;
+            }*/
             else
             {
                 hasJumped = false;

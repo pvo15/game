@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+//using Microsoft.Xna.Framework.
 
 namespace WindowsGame1
 {
@@ -28,7 +29,7 @@ namespace WindowsGame1
             Content.RootDirectory = "Content";
             graphics.PreferredBackBufferWidth = 720;
             graphics.PreferredBackBufferHeight = 480;
-            graphics.IsFullScreen = false;
+            graphics.IsFullScreen = true;
         }
 
         /// <summary>
@@ -55,9 +56,11 @@ namespace WindowsGame1
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            player = new Character(Content.Load<Texture2D>("walk"), new Vector2(100,375), 44, 40);
+           
             bg1 = new MainScrolling(Content.Load<Texture2D>("bg1"), new Rectangle(0,0,1024,480));
             bg2 = new MainScrolling(Content.Load<Texture2D>("bg2"), new Rectangle(1024, 0, 1024, 480));
+
+            player = new Character(Content.Load<Texture2D>("walk"), new Vector2(100, 375), 44, 40,bg1,bg2);
 
             // TODO: use this.Content to load your game content here
 
@@ -93,9 +96,6 @@ namespace WindowsGame1
                 bg2.BgRectangle.X = bg1.BgRectangle.X + bg2.BgTexure.Width;
 
 
-          //  bg1.update();
-            //bg2.update();
-
 
             // TODO: Add your update logic here
 
@@ -116,7 +116,8 @@ namespace WindowsGame1
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-           
+
+
             bg1.Draw(spriteBatch);
             bg2.Draw(spriteBatch);
             player.Draw(spriteBatch);
