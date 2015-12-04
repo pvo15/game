@@ -29,7 +29,7 @@ namespace WindowsGame1
             Content.RootDirectory = "Content";
             graphics.PreferredBackBufferWidth = 720;
             graphics.PreferredBackBufferHeight = 480;
-            graphics.IsFullScreen = true;
+            graphics.IsFullScreen = false;
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace WindowsGame1
             bg1 = new MainScrolling(Content.Load<Texture2D>("bg1"), new Rectangle(0,0,1024,480));
             bg2 = new MainScrolling(Content.Load<Texture2D>("bg2"), new Rectangle(1024, 0, 1024, 480));
 
-            player = new Character(Content.Load<Texture2D>("walk"), new Vector2(100, 375), 44, 40,bg1,bg2);
+            player = new Character(Content.Load<Texture2D>("walk"), Content.Load<Texture2D>("atack"),Content.Load<SpriteFont>("Font"), new Vector2(100, 375), 44, 40,bg1,bg2);
 
             // TODO: use this.Content to load your game content here
 

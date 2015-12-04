@@ -12,6 +12,9 @@ namespace WindowsGame1
     class Character
     {
         Texture2D textur;
+        Texture2D atack;
+
+        SpriteFont font;
         Rectangle rectangle;
         Vector2 orignoalPosition;
         Vector2 position;
@@ -20,17 +23,21 @@ namespace WindowsGame1
         int frameHeight;
         int framewidth;
         int currentFrame;
+        int live = 0;
 
         float timer;
         float interval = 125;
 
         bool hasJumped = false;
+        bool hasAtack = false;
 
         MainScrolling bg1,bg2;
 
         // Keyboard ks = Keyboard.GetState;
-        public Character(Texture2D newtexure, Vector2 newPosition, int newframeHeight, int newframewidth, MainScrolling newbg1, MainScrolling newbg2) {
+        public Character(Texture2D newtexure,Texture2D newatck,SpriteFont newfont, Vector2 newPosition, int newframeHeight, int newframewidth, MainScrolling newbg1, MainScrolling newbg2) {
             textur = newtexure;
+            atack = newatck;
+            font = newfont;
             position = newPosition;
             frameHeight = newframeHeight;
             framewidth = newframewidth;
@@ -40,7 +47,11 @@ namespace WindowsGame1
         public void Update(GameTime gameTime) {
             rectangle = new Rectangle(currentFrame * frameHeight,0,framewidth,frameHeight);
             orignoalPosition = new Vector2(rectangle.Width/2, rectangle.Height / 2);
-            position = position+ velocity;
+            if (Keyboard.GetState().IsKeyDown(Keys.Space)) {
+
+                hasAtack = true;
+            }else hasAtack = false;
+            
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
                 right(gameTime);
@@ -73,24 +84,30 @@ namespace WindowsGame1
             {
                 position.Y -= 200f;
                 hasJumped = true;
-
-            }
-            else {
+            } else {
                 velocity = Vector2.Zero;
             }
 
 
-          
+
             if (hasJumped == true)
             {
                 float i = 1;
-                velocity.Y += 1.15f * i;
+                velocity.Y += 1.15f * i;   
             }
 
             if (position.Y + rectangle.Height < 420)
             {
                 velocity.Y += .5f;
+                if (position.Y + rectangle.Height > 420)
+                {
+                    position.Y = 420 - rectangle.Height;
+                    velocity = Vector2.Zero;
+                    hasJumped = false;
+                }
+
             }
+           
          /*  else if (position.Y + rectangle.Height >= 420)
             {
                 velocity.Y = 420;
@@ -105,8 +122,11 @@ namespace WindowsGame1
                 velocity.Y = 0f;
             }
 
-
+            position = position + velocity;
+            Console.Out.WriteLine("p - " + position.Y);
         }
+        
+
         public void right(GameTime gametime)
         {
             if (currentFrame > 6)
@@ -150,10 +170,17 @@ namespace WindowsGame1
                 }
             }
         }
-
+        
         public void Draw(SpriteBatch spriteBatch) {
 
-            spriteBatch.Draw(textur, position, rectangle, Color.White,0f,orignoalPosition,1.0f,SpriteEffects.None,0);
+            if (hasAtack) {
+                spriteBatch.Draw(atack, position, rectangle, Color.White, 0f, orignoalPosition, 1.0f, SpriteEffects.None, 0);
+                spriteBatch.DrawString(font, "Live:" + live, new Vector2(20, 20), Color.White);
+            }
+            else {
+                spriteBatch.DrawString(font, "Live:"+position.Y + rectangle.Height, new Vector2(20,20),Color.White);
+                spriteBatch.Draw(textur, position, rectangle, Color.White, 0f, orignoalPosition, 1.0f, SpriteEffects.None, 0);
+            }
         }
     }
 }

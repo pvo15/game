@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\pavel\documents\visual studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\atack.xnb</Output>
-      <Time>2015-11-10T13:47:55.3620091+04:00</Time>
+      <Time>2015-12-03T19:43:49.1130429+04:00</Time>
     </Item>
     <Item>
       <Source>walk.png</Source>
@@ -37,6 +37,15 @@
       <Output>C:\Users\pavel\Documents\Visual Studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\bg2.xnb</Output>
       <Time>2015-11-17T20:50:20.9493018+04:00</Time>
     </Item>
+    <Item>
+      <Source>Font.spritefont</Source>
+      <Name>Font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\pavel\documents\visual studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\Font.xnb</Output>
+      <Time>2015-12-03T19:55:50.6462187+04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{9FD82645-F67A-4930-9656-D5B5C8B9AAD7}</ContentProjectGUID>
@@ -44,10 +53,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\pavel\Documents\Visual Studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\pavel\Documents\Visual Studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\pavel\Documents\Visual Studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\pavel\Documents\Visual Studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\pavel\documents\visual studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\pavel\documents\visual studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\pavel\documents\visual studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\pavel\documents\visual studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
