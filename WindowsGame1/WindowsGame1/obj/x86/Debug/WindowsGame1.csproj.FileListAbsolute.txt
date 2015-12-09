@@ -19,3 +19,6 @@ C:\Users\pavel\Documents\Visual Studio 2015\Projects\WindowsGame1\WindowsGame1\W
 C:\Users\pavel\Documents\Visual Studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\bg1.xnb
 C:\Users\pavel\Documents\Visual Studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\bg2.xnb
 C:\Users\pavel\documents\visual studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\Font.xnb
+C:\Users\pavel\documents\visual studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\bad.xnb
+C:\Users\pavel\documents\visual studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\bullet1.xnb
+C:\Users\pavel\documents\visual studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\platform.xnb

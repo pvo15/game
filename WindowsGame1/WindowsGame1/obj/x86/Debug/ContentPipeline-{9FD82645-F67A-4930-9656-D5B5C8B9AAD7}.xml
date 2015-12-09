@@ -46,6 +46,33 @@
       <Output>C:\Users\pavel\documents\visual studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\Font.xnb</Output>
       <Time>2015-12-03T19:55:50.6462187+04:00</Time>
     </Item>
+    <Item>
+      <Source>bad.png</Source>
+      <Name>bad</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\pavel\documents\visual studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\bad.xnb</Output>
+      <Time>2015-12-07T19:38:33.8857774+04:00</Time>
+    </Item>
+    <Item>
+      <Source>bullet1.png</Source>
+      <Name>bullet1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\pavel\documents\visual studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\bullet1.xnb</Output>
+      <Time>2015-12-07T20:49:43.413541+04:00</Time>
+    </Item>
+    <Item>
+      <Source>platform.png</Source>
+      <Name>platform</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\pavel\documents\visual studio 2015\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\platform.xnb</Output>
+      <Time>2015-12-08T22:12:37.141678+04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{9FD82645-F67A-4930-9656-D5B5C8B9AAD7}</ContentProjectGUID>

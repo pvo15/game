@@ -11,24 +11,24 @@ namespace WindowsGame1
 {
     class Character
     {
-        Texture2D textur;
+      public  Texture2D textur;
         Texture2D atack;
 
         SpriteFont font;
-        Rectangle rectangle;
+      public  Rectangle rectangle;
         Vector2 orignoalPosition;
-        Vector2 position;
-        Vector2 velocity;
+      public  Vector2 position;
+      public  Vector2 velocity;
 
         int frameHeight;
         int framewidth;
         int currentFrame;
-        int live = 0;
+      public  int live = 20;
 
         float timer;
         float interval = 125;
 
-        bool hasJumped = false;
+     public   bool hasJumped = false;
         bool hasAtack = false;
 
         MainScrolling bg1,bg2;
@@ -56,12 +56,12 @@ namespace WindowsGame1
             {
                 right(gameTime);
                 velocity.X = 3;
-                if (position.X >= 300)
+                if (position.X >= 600)
                 {
 
                     bg1.update();
                     bg2.update();
-                    position.X = 300;
+                    position.X = 600;
                 }
 
             }
@@ -76,9 +76,6 @@ namespace WindowsGame1
                     bg2.updaterevers();
                     position.X = 50;
                 }
-
-
-
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Up) && hasJumped == false)
             {
@@ -107,11 +104,6 @@ namespace WindowsGame1
                 }
 
             }
-           
-         /*  else if (position.Y + rectangle.Height >= 420)
-            {
-                velocity.Y = 420;
-            }*/
             else
             {
                 hasJumped = false;
@@ -178,8 +170,9 @@ namespace WindowsGame1
                 spriteBatch.DrawString(font, "Live:" + live, new Vector2(20, 20), Color.White);
             }
             else {
-                spriteBatch.DrawString(font, "Live:"+position.Y + rectangle.Height, new Vector2(20,20),Color.White);
-                spriteBatch.Draw(textur, position, rectangle, Color.White, 0f, orignoalPosition, 1.0f, SpriteEffects.None, 0);
+                spriteBatch.DrawString(font, "Live:"+ live+" pos"+position , new Vector2(20,20),Color.White);
+                 spriteBatch.Draw(textur, position, rectangle, Color.White, 0f, orignoalPosition, 1.0f, SpriteEffects.None, 0);
+               // spriteBatch.Draw(textur, rectangle, Color.White);
             }
         }
     }
